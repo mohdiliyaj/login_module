@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: login-module
+  datasource:
+    username: root
+    password: 19911A0413@i
+    url: jdbc:mysql://localhost:3306/exam_portal
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    
+server:
+  port: 8080
