@@ -4,6 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import in.ashokit.binding.LoginResponse;
@@ -12,6 +13,7 @@ import in.ashokit.entity.User;
 import in.ashokit.service.IUserService;
 
 @RestController
+@RequestMapping("/auth")
 public class UserController {
 	
 	private IUserService userService;
@@ -20,7 +22,7 @@ public class UserController {
 		this.userService = userService;
 	}
 	
-	@PostMapping("/")
+	@PostMapping("/login")
 	public ResponseEntity<LoginResponse> loginCheck(@RequestBody User user){
 		
 		LoginResponse loginCheck = userService.loginCheck(user);
